@@ -6,8 +6,9 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const passport = require("passport");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const cookieSession = require("cookie-session");
+
+const keys = require("./config/keys");
 const connectDB = require("./config/db");
 
 // Load config
@@ -69,10 +70,9 @@ app.set("view engine", ".hbs");
 
 // Sessions
 app.use(
-  session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: false,
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey],
   })
 );
 
