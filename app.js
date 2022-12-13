@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
@@ -12,7 +13,7 @@ const keys = require("./config/keys");
 const connectDB = require("./config/db");
 
 // Load config
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "./config/key" });
 
 // Passport config
 require("./config/passport")(passport);

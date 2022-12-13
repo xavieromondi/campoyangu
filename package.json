@@ -11,6 +11,7 @@
   "author": "Xavier Omondi",
   "license": "MIT",
   "dependencies": {
+    "config": "^3.3.8",
     "connect-mongo": "^3.2.0",
     "cookie-session": "^2.0.0",
     "dotenv": "^8.2.0",
